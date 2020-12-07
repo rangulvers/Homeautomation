@@ -19,6 +19,9 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 ### Lights
 * IKEA TRADFRI Starter Set [link](https://www.ikea.com/de/de/p/tradfri-set-mit-gateway-farb-und-weissspektrum-00406887/)
 * IKEA TRADFRI Bulbs (many of them) [link](https://www.ikea.com/de/de/p/tradfri-led-leuchtmittel-e27-600-lm-kabellos-dimmbar-farb-und-weissspektrum-farb-und-weissspektrum-rund-opalweiss-00408612/)
+* Lidl LED-Strip [link](https://www.lidl.de/de/livarno-lux-led-band-zigbee-smart-home-individuell-teilbar-selbsthaftend/p354570)
+* Lidl Xmas Lights [link](https://www.lidl.de/de/melinera-lichterkette-zigbee-smart-home/p360021)
+* Lidl Smartplug 
 
 ### Network
 * Ubiquiti AP UAP-AC-LITE [link](https://www.amazon.de/gp/product/B016K4GQVG/ref=ox_sc_saved_image_1?smid=A3JWKAKR8XB7XF&psc=1)
