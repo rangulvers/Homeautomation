@@ -38,3 +38,4 @@ I also added a custom binary sensor to translate ON and OFF to OPEN and Close
         friendly_name: 'friendly sensor name'
 ```
 
+
