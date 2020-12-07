@@ -34,4 +34,4 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 
 ## Home Automations
 
-Smart home with Shellys [Shelly](https://github.com/rangulvers/Homeautomation/blob/main/Shellys.md)
+Smart home with [Shellys](https://github.com/rangulvers/Homeautomation/blob/main/Shellys.md)
