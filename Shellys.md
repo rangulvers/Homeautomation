@@ -53,3 +53,16 @@ I also added a custom binary sensor to translate ON and OFF to OPEN and Close
 ```
 
 ![](images/ha_shelly_garage_door.png)
+
+
+## Balter EVO-7M Doorbell 
+
+After installing my Balter Doorbell system I realized that I the bell sound of both monitors in the living room and upstairs floor are not loud enough to notify me in my office located in the basement. After reading the documentation I realized that I can use the external bell output to trigger a shelly switch. 
+
+This has to be connected to the main monitor of the system otherwise it won't work. 
+
+![](images/ha_shelly_balter_doorbell.png)
+
+In Homeassistant I also created a Node-Red flow to notify me when someone is at the door and to flash the lights in my office
+
+![](images/ha_shelly_balter_doorbell_node_red.png)
