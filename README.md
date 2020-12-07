@@ -27,3 +27,8 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 
 ### Cameras
 * Reolink RLC-511w [link](https://reolink.com/de/product/rlc-511w/)
+
+
+## Home Automations
+
+Smart home with Shellys [Shelly](https://github.com/rangulvers/Homeautomation/blob/main/Shellys.md)
