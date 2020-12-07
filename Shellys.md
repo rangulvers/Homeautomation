@@ -11,8 +11,11 @@ Since the shelly comes with the 24v-60v DC option active by default there is not
 * Connecting the power supply
 
     The ProMatic3 offers a direct powersupply thru the board itself. Just connect 
+    
     L(-) -> 20 
+    
     N(+) -> 5
+    
     ![](images/ha_shelly_hoermann_1.jpg)
     
 * Status
