@@ -1,6 +1,7 @@
 [Buy me a Coffee](buymeacoff.ee/rangulvers) :coffee:
 
 Collection of scripts, tools, hardware and other elements used for our home automation setup. Everything centers around Homeassistant running on a Raspberry PI 4
+
 ## Software
 
 I am running Home Assistant with Version
@@ -118,7 +119,7 @@ To fix that you can open up the Shelly App and change the setting "Reverse Input
 
 I also added a custom binary sensor to translate ON and OFF to OPEN and Close
 
-```
+```yaml
  - platform: template
     sensors:
       sensor_name:
@@ -136,22 +137,21 @@ I also added a custom binary sensor to translate ON and OFF to OPEN and Close
 
 ![](images/ha_shelly_garage_door.png)
 
-
-## Doorbell notification with Balter EVO-7M 
+## Doorbell notification with Balter EVO-7M
 
 After installing my Balter Doorbell system I realized that the doorbell sound of both monitors in the living room and upstairs floor is not loud enough to notify me in my office located in the basement. After reading the documentation I realized that I can use the external bell output to trigger a shelly switch. 
 
-This has to be connected to the main monitor of the system otherwise it won't work. 
+This has to be connected to the main monitor of the system otherwise it won't work.
 
 ![](images/ha_shelly_balter_doorbell.png)
 
-In Homeassistant I also created a Node-Red flow to notify me when someone is at the door and to flash the lights in my office 5 times. 
+In Homeassistant I also created a Node-Red flow to notify me when someone is at the door and to flash the lights in my office 5 times.
 With the notification I also get a snapshot of my camera aimed at the door. This can be done in two ways:
 
 1. call the camera.snapshot service when you recieve the trigger from the doorbell shelly
-2. use the get entities node for the camera to extract the "entity_picture" attribute. 
+2. use the get entities node for the camera to extract the "entity_picture" attribute.
 
-In both cases you have to use a function node to prep the message to be send 
+In both cases you have to use a function node to prep the message to be send
 
 ```js
 msg.payload = {
@@ -173,19 +173,18 @@ return msg;
 
 ![](images/ha_shelly_balter_doorbell_node_red.png)
 
-
 ## Office Morning routine
 
 My office is setup with 
 
-   - Shelly 1 for the ceiling light 
-   - Lidl LED Strip around a framed picture
-   - IKEA Light Bulp as a desk light
-   - Aqara Motion sensor next to the door
+* Shelly 1 for the ceiling light
+* Lidl LED Strip around a framed picture
+* IKEA Light Bulp as a desk light
+* Aqara Motion sensor next to the door
 
-When I walk into the office the motion detector is triggered and turns on all lights in my office. I also make use of the [FLUX](https://www.home-assistant.io/integrations/flux/) addon to generate a more natural light during the day. 
+When I walk into the office the motion detector is triggered and turns on all lights in my office. I also make use of the [FLUX](https://www.home-assistant.io/integrations/flux/) addon to generate a more natural light during the day.
 
-If the motion sensor does not see any movement for 15 minutes all lights are turned back off again. 
+The lights stay on as long I'm in my office. This is done via the access point that has a special wifi just for my office. If my phone changes the wifi when leaving the office all lights are turned off.
 
 ## Alarm Mode and Presence Faker
 
@@ -207,4 +206,28 @@ To add a small layer of security I also added the [node-red-contrib-presence-fak
 
 ### Kitchen Lights
 
-In my kitchen I have installed the Sonoff BASICZBR3 to control the counter top lights. They are paired with the Sonoff motion sensor and will turn of after no motion is detected unless I also turn on the main kitchen light. If I turn of the main light the counter top lights also turn off. 
+In my kitchen I have installed the Sonoff BASICZBR3 to control the counter top lights. They are paired with the Sonoff motion sensor and will turn of after no motion is detected unless I also turn on the main kitchen light. If I turn of the main light the counter top lights also turn off.
+
+
+### Network Monitoring
+
+This is more of a gimmick showing me the current network status using the speedtest integration
+
+### Server Monitoring
+
+To make sure that my server is feeling well and will not hang itself on the cat cable I use the system health integration
+```yaml
+system_health:
+sensor:
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+      - type: disk_use
+      - type: disk_free
+      - type: memory_use_percent
+      - type: load_15m
+      - type: last_boot
+      - type: processor_temperature
+```
+![](images/ha_system_health.png)
+
