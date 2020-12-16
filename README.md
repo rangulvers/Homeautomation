@@ -23,20 +23,19 @@ I am running Home Assistant with Version
   
 ### Integrations
 
-Integration | Icon |used for | more information
---- | --- |--- | ---
-Google Cast | [logo]: https://brands.home-assistant.io/cast/logo.png "Chrome Cast"
-HACS|
-Home Connect |
-NIBE|
-Reolink||[Reolink](https://github.com/fwestenberg/reolink_dev)
-Shelly|
-Speedtest|
-IKEA|
-UBIQUITI|
-Zigbee (ZHA)|
-Mobile App|
-MQTT|
+Integration| Icon |used for | more information
+--- |--- |--- | ---
+Google Cast |![](https://brands.home-assistant.io/cast/logo.png) | Change light scence when anything is playing on the chrome cast |
+HACS |![](https://brands.home-assistant.io/hacs/logo.png) | install of custom integrations |
+Home Connect |![](https://brands.home-assistant.io/home_connect/logo.png) |  |
+Nibe |![](https://brands.home-assistant.io/nibe/logo.png) | Collect usage information about our heating system |
+Reolink |![](https://brands.home-assistant.io/reolink_dev/icon.png)| Security :smile: |[Reolink](https://github.com/fwestenberg/reolink_dev)
+Shelly |![](https://brands.home-assistant.io/shelly/logo.png) | Controll different lights and some custom builds listed below |
+Speedtest |![](https://brands.home-assistant.io/speedtestdotnet/logo.png) |  |
+Unifi |![](https://brands.home-assistant.io/unifi/logo.png) | Control all Access Points and used for "Home" information |
+Zigbee (ZHA) |![](https://brands.home-assistant.io/zha/logo.png) | Manage and control all zigbee devices  |
+Mobile App |![](https://brands.home-assistant.io/mobile_app/icon.png)| |
+MQTT |![](https://brands.home-assistant.io/mqtt/logo.png)||
 
 ## Hardware
 
