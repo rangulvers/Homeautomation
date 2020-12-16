@@ -1,3 +1,5 @@
+[Buy me a Coffee](buymeacoff.ee/rangulvers) :coffee:
+
 Collection of scripts, tools, hardware and other elements used for our home automation setup. Everything centers around Homeassistant running on a Raspberry PI 4
 
 
