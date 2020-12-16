@@ -1,20 +1,7 @@
 [Buy me a Coffee](buymeacoff.ee/rangulvers) :coffee:
 
 Collection of scripts, tools, hardware and other elements used for our home automation setup. Everything centers around Homeassistant running on a Raspberry PI 4
-
-
-- [Home Automation](#home-automation)
-  - [Garage Door Sensor](#garage-door-sensor)
-    - [Hardware Setup](#hardware-setup)
-    - [Homeassistant integration](#homeassistant-integration)
-  - [Doorbell notification with Balter EVO-7M](#doorbell-notification-with-balter-evo-7m)
-  - [Office Morning routine](#office-morning-routine)
-  - [Alarm Mode and Presence Faker](#alarm-mode-and-presence-faker)
-    - [Alarm Mode](#alarm-mode)
-    - [Presence Faker](#presence-faker)
-    - [Kitchen Lights](#kitchen-lights)
-
-## Software 
+## Software
 
 I am running Home Assistant with Version
 
@@ -25,40 +12,50 @@ I am running Home Assistant with Version
 
 Integration| Icon |used for | more information
 --- |--- |--- | ---
-Google Cast |![](https://brands.home-assistant.io/cast/logo.png) | Change light scence when anything is playing on the chrome cast |
-HACS |![](https://brands.home-assistant.io/hacs/logo.png) | install of custom integrations |
-Home Connect |![](https://brands.home-assistant.io/home_connect/logo.png) |  |
-Nibe |![](https://brands.home-assistant.io/nibe/logo.png) | Collect usage information about our heating system |
+Google Cast |![](https://brands.home-assistant.io/cast/icon.png) | Change light scence when anything is playing on the chrome cast |
+HACS |![](https://brands.home-assistant.io/hacs/icon.png) | install of custom integrations |
+Home Connect |![](https://brands.home-assistant.io/home_connect/icon.png) |  |
+Nibe |![](https://brands.home-assistant.io/nibe/icon.png) | Collect usage information about our heating system |
 Reolink |![](https://brands.home-assistant.io/reolink_dev/icon.png)| Security :smile: |[Reolink](https://github.com/fwestenberg/reolink_dev)
-Shelly |![](https://brands.home-assistant.io/shelly/logo.png) | Controll different lights and some custom builds listed below |
-Speedtest |![](https://brands.home-assistant.io/speedtestdotnet/logo.png) |  |
-Unifi |![](https://brands.home-assistant.io/unifi/logo.png) | Control all Access Points and used for "Home" information |
-Zigbee (ZHA) |![](https://brands.home-assistant.io/zha/logo.png) | Manage and control all zigbee devices  |
+Shelly |![](https://brands.home-assistant.io/shelly/icon.png) | Controll different lights and some custom builds listed below |
+Speedtest |![](https://brands.home-assistant.io/speedtestdotnet/icon.png) |  |
+Unifi |![](https://brands.home-assistant.io/unifi/icon.png) | Control all Access Points and used for "Home" information |
+Zigbee (ZHA) |![](https://brands.home-assistant.io/zha/icon.png) | Manage and control all zigbee devices  |
 Mobile App |![](https://brands.home-assistant.io/mobile_app/icon.png)| |
-MQTT |![](https://brands.home-assistant.io/mqtt/logo.png)||
+MQTT |![](https://brands.home-assistant.io/mqtt/icon.png)||
 
 ## Hardware
 
-### Sensors and Automation
-* Raspberry PI 4  [link](https://www.amazon.de/Raspberry-Pi-ARM-Cortex-A72-Bluetooth-Micro-HDMI/dp/B07TC2BK1X/ref=sxts_sxwds-bia-wc-p13n1_0?adgrpid=70762780283&cv_ct_cx=raspberry+pi+4&dchild=1&gclid=Cj0KCQiAhs79BRD0ARIsAC6XpaVwlOQdd5mw_bwf6e5xMAyySUobhpqzcAI24BbjxlNVSjHTf2_POM8aArT7EALw_wcB&hvadid=352854576614&hvdev=c&hvlocphy=9041983&hvnetw=g&hvqmt=e&hvrand=3613656398060616438&hvtargid=kwd-297124344473&hydadcr=8207_1722838&keywords=raspberry+pi+4&pd_rd_i=B07TC2BK1X&pd_rd_r=a2d9be5f-034a-40e0-ac72-739b15f88466&pd_rd_w=NwjsC&pd_rd_wg=aMne9&pf_rd_p=62eb0a5a-7892-4776-9eb7-4ce13a045c59&pf_rd_r=NWRPERZQ99WGD72NXMGX&psc=1&qid=1605617162&quartzVehicle=812-409&replacementKeywords=raspberry+pi&sr=1-1-79e1db8b-ac0e-4e53-86a0-e4b4f9bb89cd&tag=googhydr08-21) 
-* Shelly 1 [link](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/)
-* Shelly 2.5  [link](https://shelly.cloud/products/shelly-25-smart-home-automation-relay/)
-* Sonoff Zigbee Brdige to add Zigbee devices [link](https://www.itead.cc/sonoff-zbbridge.html) 
-* Sonoff Zigbee Wirless Switch
-* Sonoff Zigbee Temperatue and humidity Sensor
-* Sonoff Zigbee Motion Sensor
-* Sonoff Zigbee Wireless door / window sensor
-* Aqara Motion Sensor [link](https://www.aqara.com/eu/motion_sensor.html)
-* Aqare Vibration Sensor [link](https://www.aqara.com/eu/vibration_sensor.html)
-* Lidl Zigbee Door Sensor
+### The brain
+
+Everything is running on a Raspberry PI 4 [link](https://www.amazon.de/Raspberry-Pi-ARM-Cortex-A72-Bluetooth-Micro-HDMI/dp/B07TC2BK1X/ref=sxts_sxwds-bia-wc-p13n1_0?adgrpid=70762780283&cv_ct_cx=raspberry+pi+4&dchild=1&gclid=Cj0KCQiAhs79BRD0ARIsAC6XpaVwlOQdd5mw_bwf6e5xMAyySUobhpqzcAI24BbjxlNVSjHTf2_POM8aArT7EALw_wcB&hvadid=352854576614&hvdev=c&hvlocphy=9041983&hvnetw=g&hvqmt=e&hvrand=3613656398060616438&hvtargid=kwd-297124344473&hydadcr=8207_1722838&keywords=raspberry+pi+4&pd_rd_i=B07TC2BK1X&pd_rd_r=a2d9be5f-034a-40e0-ac72-739b15f88466&pd_rd_w=NwjsC&pd_rd_wg=aMne9&pf_rd_p=62eb0a5a-7892-4776-9eb7-4ce13a045c59&pf_rd_r=NWRPERZQ99WGD72NXMGX&psc=1&qid=1605617162&quartzVehicle=812-409&replacementKeywords=raspberry+pi&sr=1-1-79e1db8b-ac0e-4e53-86a0-e4b4f9bb89cd&tag=googhydr08-21) 
 
 ### Gateways and hubs
 
 Vendor | Type | Used For | More Information
 --- | --- | --- | ---
-Sonoff |
+Sonoff | ZBBridge | All Zigbee communication| [link](https://www.itead.cc/sonoff-zbbridge.html)
 IKEA Gateway | | This is not used anymore since I moved all IKEA lights to my regular Zigbee Network powered by the Sonoff Zigbee Bridge |
 LIDL Gateway | | This is not used anymore since I moved all Lidl lights to my regular Zigbee Network
+
+### Sensors
+
+Vendor | Type | Used For | More Information
+--- | --- | --- | ---
+Sonoff | SNZB-01 | Wireless switch | 
+Sonoff | SNZB-02 | temperature and humidity |
+Sonoff | SNZB-03 | motion sensor |
+Sonoff | SNZB-04 | Window and door sensor |
+Aqara  |RTCGQ11LM | Motion Sensor |[link](https://www.aqara.com/eu/motion_sensor.html)
+Aqara | DJT11LM | Vibration Sensor | [link](https://www.aqara.com/eu/vibration_sensor.html) This is not used anymore since I cannot get it to work as it should
+Lidl | Silvercrest | Window and door sensor | [link](https://www.lidl.de/de/silvercrest-tuer-fensterkontakt-zigbee-smart-home/p355043)
+
+### Switches
+
+Vendor | Type | Used For | More Information
+--- | --- | --- | ---
+Shelly | 1  | Control different lights and custom setups | [link](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/)
+Shelly | 2.5  | Control different lights and custom setups |  [link](https://shelly.cloud/products/shelly-25-smart-home-automation-relay/)
 
 ### Lights
 
@@ -70,6 +67,7 @@ Lidl | Xmas Lights | | [link](https://www.lidl.de/de/melinera-lichterkette-zigbe
 Lidl | Smartplug | |
 
 ### Network
+
 Vendor | Type | Used For | More Information
 --- | --- | --- | ---
 Netgear | 16-Port POE | Switch | [link](https://www.amazon.de/Netgear-JGS516PE-100EUS-16-Port-ProSAFE-Managed/dp/B00F3XSLWI/ref=sr_1_5?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2S0I128KF7QT1&dchild=1&keywords=netgear+poe+16+port&qid=1605617897&s=computers&sprefix=netgear+poe+16%2Ccomputers%2C174&sr=1-5)
@@ -77,6 +75,7 @@ Ubiquiti | UAP-AC-Lite | Access point | [link](https://www.amazon.de/gp/product/
 Ubiquiti | UAP-AC-PRO | Access point | [link](https://www.amazon.de/gp/product/B016XYQ3WK/ref=ox_sc_saved_image_2?smid=A3JWKAKR8XB7XF&psc=1)
 
 ### Cameras
+
 Vendor | Type | Used For | More Information
 --- | --- | --- | ---
 Reolink | RLC-511w | Driveway and Garden  | [link](https://reolink.com/de/product/rlc-511w/)
