@@ -21,18 +21,20 @@ I am running Home Assistant with Version
   
 ### Integrations
 
-- [x] Google Cast
-- [x] HACS
-- [x] Home Connect
-- [x] NIBE
-- [x] [Reolink](https://github.com/fwestenberg/reolink_dev)
-- [x] Shelly
-- [x] Speedtest
-- [x] IKEA
-- [x] UBIQUITI
-- [x] zigbee 
-- [x] mobile app
-- [x] MQTT Mosquitto broker
+Integration | Icon |used for | more information
+--- | --- |--- | ---
+Google Cast | [logo]: https://brands.home-assistant.io/cast/logo.png "Chrome Cast"
+HACS|
+Home Connect |
+NIBE|
+Reolink||[Reolink](https://github.com/fwestenberg/reolink_dev)
+Shelly|
+Speedtest|
+IKEA|
+UBIQUITI|
+Zigbee (ZHA)|
+Mobile App|
+MQTT|
 
 ## Hardware
 
@@ -49,21 +51,34 @@ I am running Home Assistant with Version
 * Aqare Vibration Sensor [link](https://www.aqara.com/eu/vibration_sensor.html)
 * Lidl Zigbee Door Sensor
 
+### Gateways and hubs
+
+Vendor | Type | Used For | More Information
+--- | --- | --- | ---
+Sonoff |
+IKEA Gateway | | This is not used anymore since I moved all IKEA lights to my regular Zigbee Network powered by the Sonoff Zigbee Bridge |
+LIDL Gateway | | This is not used anymore since I moved all Lidl lights to my regular Zigbee Network
+
 ### Lights
-* IKEA TRADFRI Starter Set [link](https://www.ikea.com/de/de/p/tradfri-set-mit-gateway-farb-und-weissspektrum-00406887/)
-* IKEA TRADFRI Bulbs (many of them) [link](https://www.ikea.com/de/de/p/tradfri-led-leuchtmittel-e27-600-lm-kabellos-dimmbar-farb-und-weissspektrum-farb-und-weissspektrum-rund-opalweiss-00408612/)
-* Lidl LED-Strip [link](https://www.lidl.de/de/livarno-lux-led-band-zigbee-smart-home-individuell-teilbar-selbsthaftend/p354570)
-* Lidl Xmas Lights [link](https://www.lidl.de/de/melinera-lichterkette-zigbee-smart-home/p360021)
-* Lidl Smartplug 
+
+Vendor | Type | Used For | More Information
+--- | --- | --- | ---
+IKEA TRADFRI | E27 CWS opal 600lm | Indoor lights | [link](https://www.ikea.com/de/de/p/tradfri-led-leuchtmittel-e27-600-lm-kabellos-dimmbar-farb-und-weissspektrum-farb-und-weissspektrum-rund-opalweiss-00408612/)
+Lidl | LED-Strip | | [link](https://www.lidl.de/de/livarno-lux-led-band-zigbee-smart-home-individuell-teilbar-selbsthaftend/p354570)
+Lidl | Xmas Lights | | [link](https://www.lidl.de/de/melinera-lichterkette-zigbee-smart-home/p360021)
+Lidl | Smartplug | |
 
 ### Network
-* Ubiquiti AP UAP-AC-LITE [link](https://www.amazon.de/gp/product/B016K4GQVG/ref=ox_sc_saved_image_1?smid=A3JWKAKR8XB7XF&psc=1)
-* Ubiquite AP UAP-AC-PRO [link](https://www.amazon.de/gp/product/B016XYQ3WK/ref=ox_sc_saved_image_2?smid=A3JWKAKR8XB7XF&psc=1)
-* Netgear 16-Port POE [link](https://www.amazon.de/Netgear-JGS516PE-100EUS-16-Port-ProSAFE-Managed/dp/B00F3XSLWI/ref=sr_1_5?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2S0I128KF7QT1&dchild=1&keywords=netgear+poe+16+port&qid=1605617897&s=computers&sprefix=netgear+poe+16%2Ccomputers%2C174&sr=1-5)
+Vendor | Type | Used For | More Information
+--- | --- | --- | ---
+Netgear | 16-Port POE | Switch | [link](https://www.amazon.de/Netgear-JGS516PE-100EUS-16-Port-ProSAFE-Managed/dp/B00F3XSLWI/ref=sr_1_5?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2S0I128KF7QT1&dchild=1&keywords=netgear+poe+16+port&qid=1605617897&s=computers&sprefix=netgear+poe+16%2Ccomputers%2C174&sr=1-5)
+Ubiquiti | UAP-AC-Lite | Access point | [link](https://www.amazon.de/gp/product/B016K4GQVG/ref=ox_sc_saved_image_1?smid=A3JWKAKR8XB7XF&psc=1)
+Ubiquiti | UAP-AC-PRO | Access point | [link](https://www.amazon.de/gp/product/B016XYQ3WK/ref=ox_sc_saved_image_2?smid=A3JWKAKR8XB7XF&psc=1)
 
 ### Cameras
-
-* Reolink RLC-511w [link](https://reolink.com/de/product/rlc-511w/)
+Vendor | Type | Used For | More Information
+--- | --- | --- | ---
+Reolink | RLC-511w | Driveway and Garden  | [link](https://reolink.com/de/product/rlc-511w/)
 
 # Home Automation 
 
