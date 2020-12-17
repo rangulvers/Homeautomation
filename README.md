@@ -1,6 +1,6 @@
 # Custom Home Automation 
 
-[Buy me a Coffee](buymeacoff.ee/rangulvers) :coffee:
+[Buy me a Coffee](https://www.buymeacoff.ee/rangulvers) :coffee:
 
 Collection of scripts, tools, hardware and other elements used for our home automation setup.
 
