@@ -1,6 +1,8 @@
+# Custom Home Automation 
+
 [Buy me a Coffee](buymeacoff.ee/rangulvers) :coffee:
 
-Collection of scripts, tools, hardware and other elements used for our home automation setup. Everything centers around Homeassistant running on a Raspberry PI 4
+Collection of scripts, tools, hardware and other elements used for our home automation setup.
 
 ## Software
 
@@ -8,6 +10,20 @@ I am running Home Assistant with Version
 
 * Operating System Home Assistant OS 5.8  
 * Supervisor Version 2020.12.6
+
+
+### Addons
+
+Addon | Icon | used for | more information
+--- | --- | --- | --- 
+DuckDns | | Allow the external login via a custom domain |
+Grafana | | The open platform for beautiful analytics and monitoring. |
+InfluxDB | | Scalable datastore for metrics, events, and real-time analytics. |
+Log Viewer | | Browser-based log utility for Home Assistant. |
+NGINX | | An SSL/TLS proxy. To split traffic between internal and external  |
+Node-Red | | Flow-based programming for the Internet of Things. |
+TasmoAdmin | | Centrally manage all your Sonoff-Tasmota devices. |
+UniFi Controller | |Manage your UniFi network using a web browser. |
   
 ### Integrations
 
@@ -81,16 +97,16 @@ Vendor | Type | Used For | More Information
 --- | --- | --- | ---
 Reolink | RLC-511w | Driveway and Garden  | [link](https://reolink.com/de/product/rlc-511w/)
 
-# Home Automation 
+## Home Automation 
 
-## Garage Door Sensor
+### Garage Door Sensor
 
 After installing the Hörmann ProMatic3 I wanted to also retrieve the status of the door to make sure it is closed at night or be alarmed when it is opend when it should not be. 
 To my suprise this has been pretty straight forward. 
 
 Since the shelly comes with the 24v-60v DC option active by default there is nothing we need to change
 
-### Hardware Setup
+#### **Hardware Setup**
 * Connecting the power supply
 
     The ProMatic3 offers a direct powersupply thru the board itself. Just connect 
@@ -101,7 +117,7 @@ Since the shelly comes with the 24v-60v DC option active by default there is not
     
     ![](images/ha_shelly_hoermann_1.jpg)
     
-* Status
+* Open / Close Status Information
 
     To also get a status about the current state of the gate you need to flip the the DL Button 2 to "ON". This is "OFF" by default
     DL Button 2 controlls if the "End position message" should be triggered when the gate is closed
@@ -109,11 +125,11 @@ Since the shelly comes with the 24v-60v DC option active by default there is not
     
     ![](images/ha_shelly_hoermann_3.jpg)
 
-* Controll
+* Controll the door
 
     I did not connect the O/I ports to actually controll the gate with my shelly. If you also want to controll the gate just conncet the O/I ports of your shelly to the two terminal ports on the right (open in my picture). The order does not matter
 
-### Homeassistant integration
+#### **Homeassistant integration**
 If you now connect your shelly to HA you will recieve the status and can controll your gate. There is only one issue. The information is somewhat missleading in HA since it will show "ON" for closed and "OFF" for open. 
 To fix that you can open up the Shelly App and change the setting "Reverse Input"
 
@@ -137,7 +153,7 @@ I also added a custom binary sensor to translate ON and OFF to OPEN and Close
 
 ![](images/ha_shelly_garage_door.png)
 
-## Doorbell notification with Balter EVO-7M
+### Doorbell notification with Balter EVO-7M
 
 After installing my Balter Doorbell system I realized that the doorbell sound of both monitors in the living room and upstairs floor is not loud enough to notify me in my office located in the basement. After reading the documentation I realized that I can use the external bell output to trigger a shelly switch. 
 
@@ -173,7 +189,7 @@ return msg;
 
 ![](images/ha_shelly_balter_doorbell_node_red.png)
 
-## Office Morning routine
+### Office Morning routine
 
 My office is setup with 
 
@@ -186,9 +202,9 @@ When I walk into the office the motion detector is triggered and turns on all li
 
 The lights stay on as long I'm in my office. This is done via the access point that has a special wifi just for my office. If my phone changes the wifi when leaving the office all lights are turned off.
 
-## Alarm Mode and Presence Faker
+### Alarm Mode and Presence Faker
 
-### Alarm Mode
+#### **Alarm Mode**
 
 One great use case for automation is the alarm mode. The mode turns on by itself when the house is empty based on the device trackers. If any of the motion, door, window or vibration sensors is triggered with the mode activated 
 
@@ -199,21 +215,21 @@ One great use case for automation is the alarm mode. The mode turns on by itself
 - and to add a little bit of extra to it -> the smart speakers start playing a very unpleasant noice.
 
 
-### Presence Faker
+#### **Presence Faker**
 
 To add a small layer of security I also added the [node-red-contrib-presence-faker](https://flows.nodered.org/node/node-red-contrib-presence-faker) node. This will turn on and off random lights in the house when we are away. 
 
 
-### Kitchen Lights
+#### **Kitchen Lights**
 
 In my kitchen I have installed the Sonoff BASICZBR3 to control the counter top lights. They are paired with the Sonoff motion sensor and will turn of after no motion is detected unless I also turn on the main kitchen light. If I turn of the main light the counter top lights also turn off.
 
 
-### Network Monitoring
+#### **Network Monitoring**
 
 This is more of a gimmick showing me the current network status using the speedtest integration
 
-### Server Monitoring
+#### **Server Monitoring**
 
 To make sure that my server is feeling well and will not hang itself on the cat cable I use the system health integration
 ```yaml
