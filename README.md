@@ -158,7 +158,7 @@ I also added a custom binary sensor to translate ON and OFF to OPEN and Close
 
 ### Doorbell notification with Balter EVO-7M
 
-See also  [Shelly Creates noise on data link with Halter Doorbell #1](/issues/1)
+See also  [Shelly Creates noise on data link with Halter Doorbell #1](/../../issues/1)
 
 After installing my Balter Doorbell system I realized that the doorbell sound of both monitors in the living room and upstairs floor is not loud enough to notify me in my office located in the basement. After reading the documentation I realized that I can use the external bell output to trigger a shelly switch.
 
