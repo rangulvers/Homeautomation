@@ -104,7 +104,7 @@ Reolink | Secret :wink: |RLC-511w | Driveway and Garden  | [link](https://reolin
 
 ### deConz / ConbeeII / Phoscon 
 
-Settining up deConz together with the conbeeII stick has been pretty straight forward. Connect the conbeeII to the Raspberry and install the deConz Addon from Homeassistant. Open up the phoscon app and start adding your devices. I like the option to already assign them into groups within phoscon and be able to use those same groups again in Homeassistant. 
+Setting up deConz together with the conbeeII stick has been pretty straight forward. Connect the conbeeII to the Raspberry and install the deConz Addon from Homeassistant. Open up the phoscon app and start adding your devices. I like the option to already assign them into groups within phoscon and be able to use those same groups again in Homeassistant. 
 
 ### Garage Door Sensor
 
