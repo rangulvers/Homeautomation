@@ -24,6 +24,7 @@ NGINX |  An SSL/TLS proxy. To split traffic between internal and external  |
 Node-Red |  Flow-based programming for the Internet of Things. |
 TasmoAdmin |  Centrally manage all your Sonoff-Tasmota devices. |
 UniFi Controller | Manage your UniFi network using a web browser. |
+deConz | Control Zigbee network 
   
 ### Integrations
 
@@ -52,7 +53,8 @@ Everything is running on a Raspberry PI 4 [link](https://www.amazon.de/Raspberry
 
 Vendor | Count | Type | Used For | More Information
 --- | --- | --- | --- | ---
-Sonoff ZBBridge | 1 |  All Zigbee communication| [link](https://www.itead.cc/sonoff-zbbridge.html)
+Conbee 2 | 1 | | Handle all Zigbee communication | [conbeeII](https://phoscon.de/de/conbee2/)
+Sonoff ZBBridge | 1 | This is not used anymore since I moved all my devices to the conbeeII stick | [link](https://www.itead.cc/sonoff-zbbridge.html)
 IKEA Gateway | 1 | | This is not used anymore since I moved all IKEA lights to my regular Zigbee Network powered by the Sonoff Zigbee Bridge |
 LIDL Gateway |1| | This is not used anymore since I moved all Lidl lights to my regular Zigbee Network
 
@@ -99,6 +101,10 @@ Vendor | Count |Type | Used For | More Information
 Reolink | Secret :wink: |RLC-511w | Driveway and Garden  | [link](https://reolink.com/de/product/rlc-511w/)
 
 ## Home Automation
+
+### deConz / ConbeeII / Phoscon 
+
+Settining up deConz together with the conbeeII stick has been pretty straight forward. Connect the conbeeII to the Raspberry and install the deConz Addon from Homeassistant. Open up the phoscon app and start adding your devices. I like the option to already assign them into groups within phoscon and be able to use those same groups again in Homeassistant. 
 
 ### Garage Door Sensor
 
