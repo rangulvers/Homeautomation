@@ -7,10 +7,8 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 
 ## Software
 
-I am running Home Assistant with Version
-
-* Operating System Home Assistant OS 5.8  
-* Supervisor Version 2020.12.6
+Homeassistant [link](https://www.home-assistant.io/)
+![](https://www.home-assistant.io/images/home-assistant-logo.svg)
 
 ### Addons
 
@@ -22,7 +20,6 @@ InfluxDB |  Scalable datastore for metrics, events, and real-time analytics. |
 Log Viewer |  Browser-based log utility for Home Assistant. |
 NGINX |  An SSL/TLS proxy. To split traffic between internal and external  |
 Node-Red |  Flow-based programming for the Internet of Things. |
-TasmoAdmin |  Centrally manage all your Sonoff-Tasmota devices. |
 UniFi Controller | Manage your UniFi network using a web browser. |
 deConz | Control Zigbee network 
   
@@ -84,7 +81,8 @@ Vendor | Count |Type | Used For | More Information
 IKEA TRADFRI | 8 | E27 CWS opal 600lm | Indoor lights | [link](https://www.ikea.com/de/de/p/tradfri-led-leuchtmittel-e27-600-lm-kabellos-dimmbar-farb-und-weissspektrum-farb-und-weissspektrum-rund-opalweiss-00408612/)
 Lidl | 2 | LED-Strip | | [link](https://www.lidl.de/de/livarno-lux-led-band-zigbee-smart-home-individuell-teilbar-selbsthaftend/p354570)
 Lidl | 1 | Xmas Lights | | [link](https://www.lidl.de/de/melinera-lichterkette-zigbee-smart-home/p360021)
-Lidl | 1 | Smartplug | |
+Lidl | 1 | Smartplug |  |
+Osram | 5 | SmartPlug+ | Extend  | 
 
 ### Network
 
