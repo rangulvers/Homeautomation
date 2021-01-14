@@ -132,7 +132,7 @@ Since the shelly comes with the 24v-60v DC option active by default there is not
     DL Button 2 controlls if the "End position message" should be triggered when the gate is closed
     Just connect the SW to the 0V terminal.
 
-    <img src="(images/ha_shelly_hoermann_3.jpg" width="200" height="400">
+    <img src="images/ha_shelly_hoermann_3.jpg" width="200" height="400">
     
 * Controll the door
 
@@ -171,7 +171,7 @@ After installing my Balter Doorbell system I realized that the doorbell sound of
 
 This has to be connected to the main monitor of the system otherwise it won't work.
 
-<img src="images/ha_shelly_balter_doorbell.pngg" width="200" height="400">
+<img src="images/ha_shelly_balter_doorbell.png" width="200" height="400">
 
 In Homeassistant I also created a Node-Red flow to notify me when someone is at the door and to flash the lights in my office 5 times.
 With the notification I also get a snapshot of my camera aimed at the door. This can be done in two ways:
