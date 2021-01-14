@@ -1,14 +1,13 @@
-# Custom Home Automation
+# Rangulvers Smarthome with Homeassistant
 
 
 <a href="https://www.buymeacoffee.com/rangulvers" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-Collection of scripts, tools, hardware and other elements used for our home automation setup.
+Collection of scripts, tools, hardware and other elements used for our home automation setup.Everything is controlled by my [homeassistant](https://www.home-assistant.io/) installation. The following parts will focus on this setup. 
 
 ## Software
+[homeassistant](https://www.home-assistant.io/)
 
-Homeassistant [link](https://www.home-assistant.io/)
-![](https://www.home-assistant.io/images/home-assistant-logo.svg)
 
 ### Addons
 
@@ -102,7 +101,10 @@ Reolink | Secret :wink: |RLC-511w | Driveway and Garden  | [link](https://reolin
 
 ### deConz / ConbeeII / Phoscon 
 
-Setting up deConz together with the conbeeII stick has been pretty straight forward. Connect the conbeeII to the Raspberry and install the deConz Addon from Homeassistant. Open up the phoscon app and start adding your devices. I like the option to already assign them into groups within phoscon and be able to use those same groups again in Homeassistant. 
+Setting up deConz together with the conbeeII stick has been pretty straight forward. Connect the conbeeII to the Raspberry and install the deConz Addon from Homeassistant. The only issue I had was to get the gateway setup correct. But this was more my fault. RTFM helps alot. After the addon is installed and you managed to add you gateway ppen up the phoscon app and start adding your devices. I like the option to already assign them into groups within phoscon and be able to use those same groups again in Homeassistant.
+
+The deConz app is a great help in understanding your Zigbee network and see how well the devices are connected. I had an issue with one of my lights going offline a lot. After checking the network map I saw that it only hat one connection to another device. So i added a smartbulb in the middle and no everythin works as it should since the smartbulb expands the network range. 
+
 
 ### Garage Door Sensor
 
@@ -121,7 +123,8 @@ Since the shelly comes with the 24v-60v DC option active by default there is not
 
     N(+) -> 5
 
-    ![](images/ha_shelly_hoermann_1.jpg)
+    
+    <img src="images/ha_shelly_hoermann_1.jpg" width="100" height="200">
 
 * Open / Close Status Information
 
