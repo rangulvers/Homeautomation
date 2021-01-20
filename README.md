@@ -3,10 +3,10 @@
 
 <a href="https://www.buymeacoffee.com/rangulvers" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-Collection of scripts, tools, hardware and other elements used for our home automation setup.Everything is controlled by my [homeassistant](https://www.home-assistant.io/) installation. The following parts will focus on this setup. 
+Collection of scripts, tools, hardware and other elements used for our home automation setup. Everything is controlled by my [home assistant](https://www.home-assistant.io/) installation. The following parts will focus on this setup. 
 
 ## Software
-[homeassistant](https://www.home-assistant.io/)
+[home assistant](https://www.home-assistant.io/)
 
 
 ### Addons
@@ -24,9 +24,9 @@ deConz | Control Zigbee network
   
 ### Integrations
 
-Integration|used for | more information
+Integration | used for | more information
 --- |--- | ---
-Google Cast  | Change light scence when anything is playing on the chrome cast |
+Google Cast  | Change light scene when anything is playing on the chrome cast |
 HACS  | install of custom integrations |
 Home Connect  |  |
 Nibe  | Collect usage information about our heating system |
@@ -34,10 +34,10 @@ Reolink | Security :smile: |[Reolink](https://github.com/fwestenberg/reolink_dev
 Shelly  | Controll different lights and some custom builds listed below |
 Speedtest  |  |
 Unifi  | Control all Access Points and used for "Home" information |
-Zigbee (ZHA)  | Manage and control all zigbee devices  |
+Zigbee (ZHA)  | Manage and control all ZigBee devices  |
 Mobile App | |
 MQTT ||
-Signal | Notification and and interaction via chat commands |  [Signal Rest API CLI](https://github.com/bbernhard/signal-cli-rest-api/blob/master/doc/HOMEASSISTANT.md)
+Signal | Notification and interaction via chat commands |  [Signal Rest API CLI](https://github.com/bbernhard/signal-cli-rest-api/blob/master/doc/HOMEASSISTANT.md)
 
 ## Hardware
 
@@ -49,8 +49,8 @@ Everything is running on a Raspberry PI 4 [link](https://www.amazon.de/Raspberry
 
 Vendor | Count | Type | Used For | More Information
 --- | --- | --- | --- | ---
-Conbee 2 | 1 | | Handle all Zigbee communication | [conbeeII](https://phoscon.de/de/conbee2/)
-Sonoff ZBBridge | 1 | This is not used anymore since I moved all my devices to the conbeeII stick | [link](https://www.itead.cc/sonoff-zbbridge.html)
+deConz| 1 | Conbee2 | Handle all Zigbee communication | [conbee2](https://phoscon.de/de/conbee2/)
+Sonoff ZBBridge | 1 | This is not used anymore since I moved all my devices to the conbee2 stick | [link](https://www.itead.cc/sonoff-zbbridge.html)
 IKEA Gateway | 1 | | This is not used anymore since I moved all IKEA lights to my regular Zigbee Network powered by the Sonoff Zigbee Bridge |
 LIDL Gateway |1| | This is not used anymore since I moved all Lidl lights to my regular Zigbee Network
 
@@ -99,17 +99,17 @@ Reolink | Secret :wink: |RLC-511w | Driveway and Garden  | [link](https://reolin
 
 ## Home Automation
 
-### deConz / ConbeeII / Phoscon 
+### deConz / Conbee2 / Phoscon 
 
-Setting up deConz together with the conbeeII stick has been pretty straight forward. Connect the conbeeII to the Raspberry and install the deConz Addon from Homeassistant. The only issue I had was to get the gateway setup correct. But this was more my fault. RTFM helps alot. After the addon is installed and you managed to add you gateway ppen up the phoscon app and start adding your devices. I like the option to already assign them into groups within phoscon and be able to use those same groups again in Homeassistant.
+Setting up deConz together with the conbee2 stick has been straight forward. Connect the conbee2 to the Raspberry and install the deConz Addon from Homeassistant. The only issue I had was to get the gateway setup correct. But this was more my fault. RTFM helps a lot. After the addon is installed and you managed to add your gateway, open up the phoscon app and start adding your devices. I like the option to already assign them into groups within phoscon and be able to use those same groups again in Homeassistant. Since they will be added as a ``` light ``` group. 
 
-The deConz app is a great help in understanding your Zigbee network and see how well the devices are connected. I had an issue with one of my lights going offline a lot. After checking the network map I saw that it only hat one connection to another device. So i added a smartbulb in the middle and no everythin works as it should since the smartbulb expands the network range. 
+The deConz app is a great help in understanding your Zigbee network and see how well the devices are connected. I had an issue with one of my lights going offline a lot. After checking the network map, I saw that it only had one connection to another device. So, I added a smart bulb in the middle and no everything works as it should since the smart bulb expands the network range. 
 
 
 ### Garage Door Sensor
 
-After installing the Hörmann ProMatic3 I wanted to also retrieve the status of the door to make sure it is closed at night or be alarmed when it is opend when it should not be.
-To my suprise this has been pretty straight forward.
+After installing the Hörmann ProMatic3 I wanted to also receive the status of the door to make sure it is closed at night or be alarmed when it is open when it should not be.
+To my surprise this has been pretty straight forward.
 
 Since the shelly comes with the 24v-60v DC option active by default there is nothing we need to change
 
@@ -117,7 +117,7 @@ Since the shelly comes with the 24v-60v DC option active by default there is not
 
 * Connecting the power supply
 
-    The ProMatic3 offers a direct powersupply thru the board itself. Just connect
+    The ProMatic3 offers a direct power supply thru the board itself. Just connect
 
     L(-) -> 20
 
@@ -129,18 +129,18 @@ Since the shelly comes with the 24v-60v DC option active by default there is not
 * Open / Close Status Information
 
     To also get a status about the current state of the gate you need to flip the the DL Button 2 to "ON". This is "OFF" by default
-    DL Button 2 controlls if the "End position message" should be triggered when the gate is closed
+    DL Button 2 controls if the "End position message" should be triggered when the gate is closed
     Just connect the SW to the 0V terminal.
 
     <img src="images/ha_shelly_hoermann_3.jpg" width="200" height="400">
     
-* Controll the door
+* Control the door
 
-    I did not connect the O/I ports to actually controll the gate with my shelly. If you also want to controll the gate just conncet the O/I ports of your shelly to the two terminal ports on the right (open in my picture). The order does not matter
+    I did not connect the O/I ports to control the gate with my shelly. If you also want to control the gate just connect the O/I ports of your shelly to the two terminal ports on the right (open in my picture). The order does not matter
 
 #### **Homeassistant integration**
 
-If you now connect your shelly to HA you will recieve the status and can controll your gate. There is only one issue. The information is somewhat missleading in HA since it will show "ON" for closed and "OFF" for open.
+If you now connect your shelly to HA you will receive the status and can control your gate. There is only one issue. The information is somewhat misleading in HA since it will show "ON" for closed and "OFF" for open.
 To fix that you can open up the Shelly App and change the setting "Reverse Input"
 
 I also added a custom binary sensor to translate ON and OFF to OPEN and Close
@@ -176,10 +176,10 @@ This has to be connected to the main monitor of the system otherwise it won't wo
 In Homeassistant I also created a Node-Red flow to notify me when someone is at the door and to flash the lights in my office 5 times.
 With the notification I also get a snapshot of my camera aimed at the door. This can be done in two ways:
 
-1. call the camera.snapshot service when you recieve the trigger from the doorbell shelly
+1. call the ```camera.snapshot``` service when you receive the trigger from the doorbell shelly
 2. use the get entities node for the camera to extract the "entity_picture" attribute.
 
-In both cases you have to use a function node to prep the message to be send
+In both cases you must use a function node to prep the message to be send
 
 ```js
 msg.payload = {
@@ -207,12 +207,19 @@ My office is setup with
 
 * Shelly 1 for the ceiling light
 * Lidl LED Strip around a framed picture
-* IKEA Light Bulp as a desk light
+* IKEA Light Bulb as a desk light
+* OSRAM Smart Plug+ to control a standing light
 * Aqara Motion sensor next to the door
 
-When I walk into the office the motion detector is triggered and turns on all lights in my office. I also make use of the [FLUX](https://www.home-assistant.io/integrations/flux/) addon to generate a more natural light during the day.
+When I walk into the office the motion sensor (PIR) is triggered and turns on all lights in my office. I also make use of the [FLUX](https://www.home-assistant.io/integrations/flux/) addon to generate a more natural light during the day.
 
-The lights stay on as long I'm in my office. This is done via the access point that has a special wifi just for my office. If my phone changes the wifi when leaving the office all lights are turned off.
+The lights stay on as long I'm in my office. This is done via the access point that has a special WIFI just for my office. If my phone changes back to our normal WIFI when leaving the office all lights are turned off and the motion sensor returns to its default state. 
+
+I also added a the Sonoff SNZB-01 to control some custom light scenes. 
+
+* Single press  : cycle thru all scenes setup for my office. (Working, Hangout, Gaming, Reading) 
+* Double press  : toggle all lights on or off. 
+* Long press    : dim lights to 50% 
 
 ### Alarm Mode and Presence Faker
 
@@ -223,7 +230,7 @@ One great use case for automation is the alarm mode. The mode turns on by itself
 - all lights in our house are turned on to full brightness
 - the outdoor lights turn on as well and start blinking rapidly to drawn attention
 - all cameras start recording
-- a notification is send to my phone
+- a notification is sent to my phone
 - and to add a little bit of extra to it -> the smart speakers start playing a very unpleasant noice.
 
 #### **Presence Faker**
@@ -232,11 +239,11 @@ To add a small layer of security I also added the [node-red-contrib-presence-fak
 
 #### **Kitchen Lights**
 
-In my kitchen I have installed the Sonoff BASICZBR3 to control the counter top lights. They are paired with the Sonoff motion sensor and will turn of after no motion is detected unless I also turn on the main kitchen light. If I turn of the main light the counter top lights also turn off.
+In my kitchen I have installed the Sonoff BASICZBR3 to control the countertop lights. They are paired with the Sonoff motion sensor and will turn of after no motion is detected unless I also turn on the main kitchen light. If I turn of the main light the countertop lights also turn off.
 
 #### **Network Monitoring**
 
-This is more of a gimmick showing me the current network status using the speedtest integration
+This is more of a gimmick showing me the current network status using the speedtest.net cli integration
 
 #### **Server Monitoring**
 
@@ -260,4 +267,4 @@ sensor:
 
 ### Fun Stuff
 
-After playing around with my overall setup for a while I thought it would be time to also have some fun with my smart home. For this I have created python script to controll all shelly's (that are connected to a light) to turn on and off in sync to the music. You can find the projekt here [rangulvers/shelly_music](https://github.com/rangulvers/shelly_music)
+After playing around with my overall setup for a while I thought it would be time to also have some fun with my smart home. For this I have created python script to control all Shelly’s (that are connected to a light) to turn on and off in sync to the music. You can find the projekt here [rangulvers/shelly_music](https://github.com/rangulvers/shelly_music)
