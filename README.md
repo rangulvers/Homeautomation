@@ -221,7 +221,7 @@ I also added a the Sonoff SNZB-01 to control some custom light scenes.
 * Double press  : toggle all lights on or off. 
 * Long press    : dim lights to 50% 
 
-See more details on how to use ZigBee Buttons with deConz and Homeassistant
+See more [details](#zigbee-buttons-with-deconz-and-homeassistant) on how to use ZigBee Buttons with deConz and Homeassistant
 
 ### Alarm Mode and Presence Faker
 
