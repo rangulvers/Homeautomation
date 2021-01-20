@@ -273,8 +273,11 @@ Adding lights or outlets to your installation is pretty easy, but what about but
 
 1. Add your buttons and switches thru the phoscon app by clicking on ```switches``` and then on ```Add new switch```
 <img src="images/ha_button_switch.png" width="200" height="400">
+
 2. The pairing will start and you will need to set your switch into pairing mode. 
+
 3. After the pairing is done, go back into your HA view and look for the switch. It is important to note that a switch will not show any state change that you can use. 
+
 4. To still be able to use the switch you need to react to the event of the switch send to the event bus. To find the event go the the developer tools and listen to the ```deconz_event```. This should look something like this
 
 ```json
