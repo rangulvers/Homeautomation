@@ -8,6 +8,7 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 ### Reach out to the community if you need help with Homeassistant
 
 [community.home.assistant.io](https://community.home-assistant.io/)
+
 [Discord](https://discord.com/channels/330944238910963714/361518119421739030)
 
 ## Software
