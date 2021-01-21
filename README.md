@@ -9,7 +9,7 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 
 [community.home.assistant.io](https://community.home-assistant.io/)
 
-[Discord](https://discord.com/channels/330944238910963714/361518119421739030)
+[Discord](https://discord.com/invite/c5DvZ4e)
 
 ## Software
 [home assistant](https://www.home-assistant.io/)
