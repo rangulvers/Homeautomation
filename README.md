@@ -169,43 +169,7 @@ I also added a custom binary sensor to translate ON and OFF to OPEN and Close
 
 ![](images/ha_shelly_garage_door.png)
 
-### Doorbell notification with Balter EVO-7M
 
-See also  [Shelly Creates noise on data link with Halter Doorbell #1](/../../issues/1)
-
-After installing my Balter Doorbell system I realized that the doorbell sound of both monitors in the living room and upstairs floor is not loud enough to notify me in my office located in the basement. After reading the documentation I realized that I can use the external bell output to trigger a shelly switch.
-
-This has to be connected to the main monitor of the system otherwise it won't work.
-
-<img src="images/ha_shelly_balter_doorbell.png" width="200" height="400">
-
-In Homeassistant I also created a Node-Red flow to notify me when someone is at the door and to flash the lights in my office 5 times.
-With the notification I also get a snapshot of my camera aimed at the door. This can be done in two ways:
-
-1. call the ```camera.snapshot``` service when you receive the trigger from the doorbell shelly
-2. use the get entities node for the camera to extract the "entity_picture" attribute.
-
-In both cases you must use a function node to prep the message to be send
-
-```js
-msg.payload = {
-  "data":{
-    "title":"Doorbell",
-    "message": "Someone is at the door",
-    "data":{
-      "ttl":0,
-      "priority": "high",
-      "channel": "Motion",
-      "importance": "high",
-      "ledColor": "red",
-      "image":"https://youripordomain"+msg.data.attributes.entity_picture
-    }
-  }
-}
-return msg;
-```
-
-![](images/ha_shelly_balter_doorbell_node_red.png)
 
 ### Office Morning routine
 
