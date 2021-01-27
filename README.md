@@ -117,11 +117,12 @@ We wanted to integrate our BALTER EVO Door system into the home assistant system
 For this I can make use of the “COM / NO” ports on the main monitor of the BALTER system. 
 
 Wiring Diagram 
-    <img src="images/shelly_Balter.png" width="200" height="400">
+
+<img src="images/shelly_Balter.png" width="200" height="400">
 
 Home Automation
-    <img src="images/ha_shelly_balter_doorbell_node_red.png" width="200" height="400">
 
+<img src="images/ha_shelly_balter_doorbell_node_red.png" width="200" height="400">
 
 
 
