@@ -111,6 +111,20 @@ Setting up deConz together with the conbee2 stick has been straight forward. Con
 
 The deConz app is a great help in understanding your Zigbee network and see how well the devices are connected. I had an issue with one of my lights going offline a lot. After checking the network map, I saw that it only had one connection to another device. So, I added a smart bulb in the middle and no everything works as it should since the smart bulb expands the network range. 
 
+### Doorbell integration 
+
+We wanted to integrate our BALTER EVO Door system into the home assistant system. This allows us to get mobile notifications when someone is at the door. 
+For this I can make use of the “COM / NO” ports on the main monitor of the BALTER system. 
+
+Wiring Diagram 
+    <img src="images/shelly_Balter.png" width="200" height="400">
+
+Home Automation
+    <img src="images/ha_shelly_balter_doorbell_node_red.png" width="200" height="400">
+
+
+
+
 
 ### Garage Door Sensor
 
