@@ -57,8 +57,8 @@ Vendor | Count | Type | Used For | More Information
 --- | --- | --- | --- | ---
 deConz| 1 | Conbee2 | Handle all Zigbee communication | [conbee2](https://phoscon.de/de/conbee2/)
 Sonoff ZBBridge | 1 | This is not used anymore since I moved all my devices to the conbee2 stick | [link](https://www.itead.cc/sonoff-zbbridge.html)
-IKEA Gateway | 1 | | This is not used anymore since I moved all IKEA lights to my regular Zigbee Network powered by the Sonoff Zigbee Bridge |
-LIDL Gateway |1| | This is not used anymore since I moved all Lidl lights to my regular Zigbee Network
+IKEA Gateway | 1 | | TThis is not used anymore since I moved all my devices to the conbee2 stick |
+LIDL Gateway |1| | This is not used anymore since I moved all my devices to the conbee2 stick 
 
 ### Sensors
 
@@ -69,7 +69,7 @@ Sonoff | 2 |SNZB-02 | temperature and humidity |
 Sonoff | 2 |SNZB-03 | motion sensor |
 Sonoff | 2 |SNZB-04 | Window and door sensor |
 Aqara  | 2 |RTCGQ11LM | Motion Sensor |[link](https://www.aqara.com/eu/motion_sensor.html)
-Aqara | 1  | DJT11LM | Vibration Sensor | [link](https://www.aqara.com/eu/vibration_sensor.html) This is not used anymore since I cannot get it to work as it should
+Aqara | 1  | DJT11LM | Vibration Sensor | [link](https://www.aqara.com/eu/vibration_sensor.html)
 Lidl | 2 | Silvercrest | Window and door sensor | [link](https://www.lidl.de/de/silvercrest-tuer-fensterkontakt-zigbee-smart-home/p355043)
 
 ### Switches
