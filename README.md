@@ -213,11 +213,11 @@ The lights stay on as long I'm in my office. This is done via the access point t
 
 One great use case for automation is the alarm mode. The mode turns on by itself when the house is empty based on the device trackers. If any of the motion, door, window or vibration sensors is triggered with the mode activated
 
-- all lights in our house are turned on to full brightness
-- the outdoor lights turn on as well and start blinking rapidly to drawn attention
-- all cameras start recording
-- a notification is send to my phone
-- and to add a little bit of extra to it -> the smart speakers start playing a very unpleasant noice.
+* all lights in our house are turned on to full brightness
+* the outdoor lights turn on as well and start blinking rapidly to drawn attention
+* all cameras start recording
+* a notification is send to my phone
+* and to add a little bit of extra to it -> the smart speakers start playing a very unpleasant noice.
 
 #### **Presence Faker**
 
