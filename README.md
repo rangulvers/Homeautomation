@@ -81,13 +81,13 @@ Everything is running on a Raspberry PI 4 [link](https://www.amazon.de/Raspberry
 
 ### Lights
 
-| Vendor       | Count | Type               | Used For      | More Information                                                                                                                                                 |
-| ------------ | ----- | ------------------ | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| IKEA TRADFRI | 8     | E27 CWS opal 600lm | Indoor lights | [link](https://www.ikea.com/de/de/p/tradfri-led-leuchtmittel-e27-600-lm-kabellos-dimmbar-farb-und-weissspektrum-farb-und-weissspektrum-rund-opalweiss-00408612/) |
-| Lidl         | 2     | LED-Strip          |               | [link](https://www.lidl.de/de/livarno-lux-led-band-zigbee-smart-home-individuell-teilbar-selbsthaftend/p354570)                                                  |
-| Lidl         | 1     | Xmas Lights        |               | [link](https://www.lidl.de/de/melinera-lichterkette-zigbee-smart-home/p360021)                                                                                   |
-| Lidl         | 1     | Smartplug          |               |
-| Osram        | 5     | SmartPlug+         | Extend        |
+| Vendor       | Count | Type               | Used For                               | More Information                                                                                                                                                 |
+| ------------ | ----- | ------------------ | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| IKEA TRADFRI | 8     | E27 CWS opal 600lm | Indoor lights                          | [link](https://www.ikea.com/de/de/p/tradfri-led-leuchtmittel-e27-600-lm-kabellos-dimmbar-farb-und-weissspektrum-farb-und-weissspektrum-rund-opalweiss-00408612/) |
+| Lidl         | 2     | LED-Strip          |                                        | [link](https://www.lidl.de/de/livarno-lux-led-band-zigbee-smart-home-individuell-teilbar-selbsthaftend/p354570)                                                  |
+| Lidl         | 1     | Xmas Lights        |                                        | [link](https://www.lidl.de/de/melinera-lichterkette-zigbee-smart-home/p360021)                                                                                   |
+| Lidl         | 1     | Smartplug          | Extend network range and light control |
+| Osram        | 5     | SmartPlug+         | Extend network range and light control |
 
 ### Network
 
@@ -109,14 +109,14 @@ Everything is running on a Raspberry PI 4 [link](https://www.amazon.de/Raspberry
 
 Setting up deConz together with the conbee2 stick has been straight forward. Connect the conbee2 to the Raspberry and install the deConz Addon from Homeassistant. The only issue I had was to get the gateway setup correct. But this was more my fault. RTFM helps a lot. After the addon is installed and you managed to add your gateway, open up the phoscon app and start adding your devices. I like the option to already assign them into groups within phoscon and be able to use those same groups again in Homeassistant. Since they will be added as a ``` light ``` group. 
 
-The deConz app is a great help in understanding your Zigbee network and see how well the devices are connected. I had an issue with one of my lights going offline a lot. After checking the network map, I saw that it only had one connection to another device. So, I added a smart bulb in the middle and no everything works as it should since the smart bulb expands the network range. 
+The deConz app is a great help in understanding your Zigbee network and see how well the devices are connected. I had an issue with one of my lights going offline a lot. After checking the network map, I saw that it only had one connection to another device. So, I added a smart bulb in the middle and no everything works as it should since the smart bulb expands the network range.
 
-### Doorbell integration 
+### Doorbell integration
 
 We wanted to integrate our BALTER EVO Door system into the home assistant system. This allows us to get mobile notifications when someone is at the door. 
 For this I can make use of the “COM / NO” ports on the main monitor of the BALTER system. 
 
-Wiring Diagram 
+Wiring Diagram
 
 <img src="images/shelly_Balter.png" width="200" height="400">
 
@@ -257,13 +257,14 @@ sensor:
 Adding lights or outlets to your installation is pretty easy, but what about button and switches? It is almost as easy but takes a couple of steps to get everything working as you wish. 
 
 1. Add your buttons and switches thru the phoscon app by clicking on ```switches``` and then on ```Add new switch```
+
 <img src="images/ha_button_switch.png" width="200" height="400">
 
-2. The pairing will start and you will need to set your switch into pairing mode. 
+1. The pairing will start and you will need to set your switch into pairing mode. 
 
-3. After the pairing is done, go back into your HA view and look for the switch. It is important to note that a switch will not show any state change that you can use. 
+2. After the pairing is done, go back into your HA view and look for the switch. It is important to note that a switch will not show any state change that you can use. 
 
-4. To still be able to use the switch you need to react to the event of the switch send to the event bus. To find the event go the the developer tools and listen to the ```deconz_event```. This should look something like this
+3. To still be able to use the switch you need to react to the event of the switch send to the event bus. To find the event go the the developer tools and listen to the ```deconz_event```. This should look something like this
 
 ```json
 {
@@ -286,6 +287,7 @@ Adding lights or outlets to your installation is pretty easy, but what about but
 
 As you can see the event shows up with ``` "event": 1004 ```. You will have to note down the numbers to move forward
 For the Sonoff SNZB-01 will give you the following events
+
 * 1002 -> Single Press
 * 1003 -> Long Press
 * 1004 -> double Press
