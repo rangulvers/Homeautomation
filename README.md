@@ -11,6 +11,41 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 
 [Discord](https://discord.com/invite/c5DvZ4e)
 
+<hr>
+
+- [Rangulvers Smarthome with Homeassistant](#rangulvers-smarthome-with-homeassistant)
+    - [Reach out to the community if you need help with Homeassistant](#reach-out-to-the-community-if-you-need-help-with-homeassistant)
+  - [Software](#software)
+    - [Addons](#addons)
+    - [Integrations](#integrations)
+  - [Hardware](#hardware)
+    - [The brain](#the-brain)
+    - [Gateways and hubs](#gateways-and-hubs)
+    - [Sensors](#sensors)
+    - [Switches](#switches)
+    - [Lights](#lights)
+    - [Network](#network)
+    - [Cameras](#cameras)
+  - [Home Automation](#home-automation)
+    - [deConz / Conbee2 / Phoscon](#deconz--conbee2--phoscon)
+    - [Doorbell integration](#doorbell-integration)
+    - [Garage Door Sensor](#garage-door-sensor)
+      - [**Hardware Setup**](#hardware-setup)
+      - [**Homeassistant integration**](#homeassistant-integration)
+        - [Option 1 Create a Custom Template](#option-1-create-a-custom-template)
+        - [Option 2 Change Device Class](#option-2-change-device-class)
+    - [Office Morning routine](#office-morning-routine)
+    - [Alarm Mode and Presence Faker](#alarm-mode-and-presence-faker)
+      - [**Alarm Mode**](#alarm-mode)
+      - [**Presence Faker**](#presence-faker)
+      - [**Kitchen Lights**](#kitchen-lights)
+      - [**Network Monitoring**](#network-monitoring)
+      - [**Server Monitoring**](#server-monitoring)
+    - [ZigBee Buttons with deConz and Homeassistant](#zigbee-buttons-with-deconz-and-homeassistant)
+    - [Fun Stuff](#fun-stuff)
+
+<hr>
+
 ## Software
 [home assistant](https://www.home-assistant.io/)
 
@@ -161,8 +196,13 @@ Since the shelly comes with the 24v-60v DC option active by default there is not
 
 #### **Homeassistant integration**
 
+
 If you now connect your shelly to HA you will receive the status and can control your gate. There is only one issue. The information is somewhat misleading in HA since it will show "ON" for closed and "OFF" for open.
 To fix that you can open up the Shelly App and change the setting "Reverse Input"
+
+To get the right status ```OPEN / CLOSE``` you will need to convert the binary sensor of the shelly to something more meaningfull. As always there is more then one way to do this. 
+
+##### Option 1 Create a Custom Template
 
 I also added a custom binary sensor to translate ON and OFF to OPEN and Close
 
@@ -184,7 +224,21 @@ I also added a custom binary sensor to translate ON and OFF to OPEN and Close
 
 ![](images/ha_shelly_garage_door.png)
 
+##### Option 2 Change Device Class
 
+You can change the device class thru the ```configuration.yaml```
+
+```yaml
+
+homeassistant:
+  customize:
+    binary_sensor.shelly_garagentor_input: # change shelly class to garage door
+      device_class: garage_door
+      friendly_name: Garagentor Status
+
+```
+
+Check out the Device Class Documentation for more information [https://www.home-assistant.io/integrations/binary_sensor/](https://www.home-assistant.io/integrations/binary_sensor/)
 
 ### Office Morning routine
 
