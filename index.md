@@ -153,11 +153,12 @@ For this I can make use of the “COM / NO” ports on the main monitor of the B
 
 Wiring Diagram
 
-<img src="images/shelly_Balter.png" width="50%" height="50%">
+<img src="main/images/shelly_Balter.png" width="50%" height="50%">
 
 Home Automation
 
-<img src="images/ha_shelly_balter_doorbell_node_red.png" width="50%" height="50%">
+<img src="main/images/ha_shelly_balter_doorbell_node_red.png" width="50%" height="50%">
+
 
 
 
@@ -180,7 +181,7 @@ Since the shelly comes with the 24v-60v DC option active by default there is not
     N(+) -> 5
 
     
-    <img src="images/ha_shelly_hoermann_1.jpg" width="50%" height="50%">
+    <img src="main/images/ha_shelly_hoermann_1.jpg" width="50%" height="50%">
 
 * Open / Close Status Information
 
@@ -188,7 +189,7 @@ Since the shelly comes with the 24v-60v DC option active by default there is not
     DL Button 2 controls if the "End position message" should be triggered when the gate is closed
     Just connect the SW to the 0V terminal.
 
-    <img src="images/ha_shelly_hoermann_3.jpg" width="50%" height="50%">
+    <img src="main/images/ha_shelly_hoermann_3.jpg" width="50%" height="50%">
     
 * Control the door
 
@@ -312,7 +313,7 @@ Adding lights or outlets to your installation is pretty easy, but what about but
 
 1. Add your buttons and switches thru the phoscon app by clicking on ```switches``` and then on ```Add new switch```
 
-<img src="images/ha_button_switch.png" width="50%" height="50%">
+<img src="main/images/ha_button_switch.png" width="50%" height="50%">
 
 1. The pairing will start and you will need to set your switch into pairing mode. 
 
@@ -352,7 +353,7 @@ Create a "events: all" node and under event type select the ```deconz_event```.
 Next add a switch node to seperate the events by device id
 Now you can add another switch node after on each output to define the different button actions. 
 
-<img src="images/ha_button_node_red.png" width="400" height="400">
+<img src="main/images/ha_button_node_red.png" width="400" height="400">
 
 ### Fun Stuff
 
