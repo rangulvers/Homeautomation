@@ -363,73 +363,7 @@ Now you can add another switch node after on each output to define the different
 
 ## Smart Meter Energy Monitoring  (WORK IN PROGRESS)
 
-Since Energy Monitoring is a very big topic itself, I will try to pull all information on how to
-* Integrate into Homeassistant 
-* Technical Setup
-* Usage of Energy Data
-* and everything else that might be important
-
-into this section.
-
-### Technical Setup
-In order to connect my energy meter to my Homeassistant installation I had to figure out a way to get the data off the meter and into the system. There are a couple of option
-
-1. Get a real smart meter that offers some form of API or cloud service that you can use
-2. Pull the information from the optical gateway that sends the data in the SML format
-3. count the number of impulses on the interface
-
-In my case I went with option 2 but I will also have a writeup for option 3 with the use of ESPHome soon
-
-### Collecting Data with SML
-
-To collect the usage information via the optical gateway and translate the SML data into something useable I went ahead and setup [Volkszähler](https://wiki.volkszaehler.org/howto/raspberry_pi_image) on an old RasPi. The connection between the RasPi and the meter is done with an [IR Read/Write USB head](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjF1LrWg6vyAhWNg_0HHSmCCc0QFnoECAQQAQ&url=https%3A%2F%2Fshop.weidmann-elektronik.de%2Findex.php%3Fpage%3Dproduct%26info%3D24&usg=AOvVaw18g84QnWssRqFnDMTIT3e0)
-
-### Volkszähler configuration 
-
-After the basic setup of Volkszähler is done, it is time to dive into the details and pull live data from the meter and see what we can do. 
-
-#### Checking for Data
-To see what information is send from the smart meter we will open up a shell into the raspberry and start configuration of **vzlogger**
-
-
-````shell
-sudo nano /etc/vzlogger.conf
-````
-
-and enter the following configuration
-
-````shell
-{
-"retry" : 0,                    /* sleep between failed requests (seconds) */
-"daemon": true,                 /* run as deamon*/
-"verbosity" : 15,               /* Loglevel between 0 (nothing) and 15 (higest) */
-"log" : "/var/log/vzlogger.log",/* logfile path */
-
-"local" : {
-        "enabled" : false,      /* Enable / Disable local HTTP-Server for serving live readings */
-        "port" : 80,          /* TCP port for the local HTTP-Server */
-        "index" : true,         /* Provide a index listing of available channels */
-        "timeout" : 30,         /* timeout for long polling requests (seconds) */
-        "buffer" : 600          /* Buffer reading for the local interface (seconds) */
-},
-
-"meters" : [{
-        "enabled" : true,           /* disable or enable meter */
-        "protocol" : "sml",         /* use 'vzlogger -h' for available protocols */
-        "device" : "/dev/ttyAMA0",  /* Serial Port of Photodiod */
-        }
-]}
-````
-now we need to restart vzlogger 
-
-````shell
-sudo systemctl stop vzlogger
-sudo systemctl start vzlogger
-````
-and then log the output to the console
-````shell
-tail -f /var/log/vzlogger.log
-````
+[Smart Meter Setup](https://github.com/rangulvers/smart_meter_setup)
 
 
 ### Fun Stuff
