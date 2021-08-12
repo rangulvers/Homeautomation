@@ -43,11 +43,7 @@ Collection of scripts, tools, hardware and other elements used for our home auto
       - [**Server Monitoring**](#server-monitoring)
     - [ZigBee Buttons with deConz and Homeassistant](#zigbee-buttons-with-deconz-and-homeassistant)
   - [Smart Meter Energy Monitoring  (WORK IN PROGRESS)](#smart-meter-energy-monitoring--work-in-progress)
-    - [Technical Setup](#technical-setup)
-    - [Collecting Data with SML](#collecting-data-with-sml)
-    - [Volkszähler configuration](#volkszähler-configuration)
-      - [Checking for Data](#checking-for-data)
-    - [Fun Stuff](#fun-stuff)
+  - [Fun Stuff](#fun-stuff)
 
 <hr>
 
