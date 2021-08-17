@@ -361,6 +361,14 @@ Now you can add another switch node after on each output to define the different
 
 [Smart Meter Setup](https://github.com/rangulvers/smart_meter_setup)
 
+## Usefull stuff
+
+**Resetting Unify AP**
+````shell
+sudo syswrapper.sh restore-default
+
+set-inform http://ip-of-host:8080/inform
+````
 
 ### Fun Stuff
 
