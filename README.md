@@ -42,7 +42,7 @@ Collection of scripts, tools, hardware and other elements used for our home auto
       - [**Network Monitoring**](#network-monitoring)
       - [**Server Monitoring**](#server-monitoring)
     - [ZigBee Buttons with deConz and Homeassistant](#zigbee-buttons-with-deconz-and-homeassistant)
-  - [Smart Meter Energy Monitoring  (WORK IN PROGRESS)](#smart-meter-energy-monitoring--work-in-progress)
+  - [Smart Meter Energy Monitoring  (WORK IN PROGRESS)](#smart-meter-energy-monitoring)
   - [Fun Stuff](#fun-stuff)
 
 <hr>
