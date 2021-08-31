@@ -357,12 +357,14 @@ Now you can add another switch node after on each output to define the different
 
 
 
-## Smart Meter Energy Monitoring  (WORK IN PROGRESS)
+## Smart Meter Energy Monitoring
 
+### Volkszähler Setup
 First you need to have a way to collect the readings from you energy meter. You can follow this guide on how to connect your Energy Meter with Volkszähler
 
 [Smart Meter Setup](https://github.com/rangulvers/smart_meter_setup)
 
+### Homeassistant integration
 If you have your Volkszähler integration up and running it is time to connect the instance to your homeassistant. For this we will setup the Volkszähler MQTT Homeassistant integration.
 
 Add the following lines to your vzlogger.conf
