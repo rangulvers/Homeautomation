@@ -1,9 +1,8 @@
 # Rangulvers Smarthome with Homeassistant
 
-
 <a href="https://www.buymeacoffee.com/rangulvers" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-Collection of scripts, tools, hardware and other elements used for our home automation setup. Everything is controlled by my [home assistant](https://www.home-assistant.io/) installation. The following parts will focus on this setup. 
+Collection of scripts, tools, hardware and other elements used for our home automation setup. Everything is controlled by my [home assistant](https://www.home-assistant.io/) installation. The following parts will focus on this setup.
 
 ### Reach out to the community if you need help with Homeassistant
 
@@ -42,14 +41,17 @@ Collection of scripts, tools, hardware and other elements used for our home auto
       - [**Network Monitoring**](#network-monitoring)
       - [**Server Monitoring**](#server-monitoring)
     - [ZigBee Buttons with deConz and Homeassistant](#zigbee-buttons-with-deconz-and-homeassistant)
-  - [Smart Meter Energy Monitoring  (WORK IN PROGRESS)](#smart-meter-energy-monitoring)
-  - [Fun Stuff](#fun-stuff)
+  - [Smart Meter Energy Monitoring](#smart-meter-energy-monitoring)
+    - [Volkszähler Setup](#volkszähler-setup)
+    - [Homeassistant integration](#homeassistant-integration-1)
+  - [Usefull stuff](#usefull-stuff)
+    - [Fun Stuff](#fun-stuff)
 
 <hr>
 
 ## Software
-[home assistant](https://www.home-assistant.io/)
 
+[home assistant](https://www.home-assistant.io/)
 
 ### Addons
 
@@ -89,12 +91,9 @@ Everything is running on a Raspberry PI 4 [link](https://www.amazon.de/Raspberry
 
 ### Gateways and hubs
 
-| Vendor          | Count | Type                                                                       | Used For                                                                    | More Information                          |
-| --------------- | ----- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------- |
-| deConz          | 1     | Conbee2                                                                    | Handle all Zigbee communication                                             | [conbee2](https://phoscon.de/de/conbee2/) |
-| Sonoff ZBBridge | 1     | This is not used anymore since I moved all my devices to the conbee2 stick | [link](https://www.itead.cc/sonoff-zbbridge.html)                           |
-| IKEA Gateway    | 1     |                                                                            | TThis is not used anymore since I moved all my devices to the conbee2 stick |
-| LIDL Gateway    | 1     |                                                                            | This is not used anymore since I moved all my devices to the conbee2 stick  |
+| Vendor | Count | Type    | Used For                        | More Information                          |
+| ------ | ----- | ------- | ------------------------------- | ----------------------------------------- |
+| deConz | 1     | Conbee2 | Handle all Zigbee communication | [conbee2](https://phoscon.de/de/conbee2/) |
 
 ### Sensors
 
@@ -141,16 +140,16 @@ Everything is running on a Raspberry PI 4 [link](https://www.amazon.de/Raspberry
 
 ## Home Automation
 
-### deConz / Conbee2 / Phoscon 
+### deConz / Conbee2 / Phoscon
 
-Setting up deConz together with the conbee2 stick has been straight forward. Connect the conbee2 to the Raspberry and install the deConz Addon from Homeassistant. The only issue I had was to get the gateway setup correct. But this was more my fault. RTFM helps a lot. After the addon is installed and you managed to add your gateway, open up the phoscon app and start adding your devices. I like the option to already assign them into groups within phoscon and be able to use those same groups again in Homeassistant. Since they will be added as a ``` light ``` group. 
+Setting up deConz together with the conbee2 stick has been straight forward. Connect the conbee2 to the Raspberry and install the deConz Addon from Homeassistant. The only issue I had was to get the gateway setup correct. But this was more my fault. RTFM helps a lot. After the addon is installed and you managed to add your gateway, open up the phoscon app and start adding your devices. I like the option to already assign them into groups within phoscon and be able to use those same groups again in Homeassistant. Since they will be added as a ``` light ``` group.
 
 The deConz app is a great help in understanding your Zigbee network and see how well the devices are connected. I had an issue with one of my lights going offline a lot. After checking the network map, I saw that it only had one connection to another device. So, I added a smart bulb in the middle and no everything works as it should since the smart bulb expands the network range.
 
 ### Doorbell integration
 
-We wanted to integrate our BALTER EVO Door system into the home assistant system. This allows us to get mobile notifications when someone is at the door. 
-For this I can make use of the “COM / NO” ports on the main monitor of the BALTER system. 
+We wanted to integrate our BALTER EVO Door system into the home assistant system. This allows us to get mobile notifications when someone is at the door.
+For this I can make use of the “COM / NO” ports on the main monitor of the BALTER system.
 
 Wiring Diagram
 
@@ -159,9 +158,6 @@ Wiring Diagram
 Home Automation
 
 <img src="images/ha_shelly_balter_doorbell_node_red.png" width="50%" height="50%">
-
-
-
 
 ### Garage Door Sensor
 
@@ -172,7 +168,7 @@ Since the shelly comes with the 24v-60v DC option active by default there is not
 
 #### **Hardware Setup**
 
-* Connecting the power supply
+- Connecting the power supply
 
     The ProMatic3 offers a direct power supply thru the board itself. Just connect
 
@@ -180,28 +176,26 @@ Since the shelly comes with the 24v-60v DC option active by default there is not
 
     N(+) -> 5
 
-    
     <img src="images/ha_shelly_hoermann_1.jpg" width="50%" height="50%">
 
-* Open / Close Status Information
+- Open / Close Status Information
 
     To also get a status about the current state of the gate you need to flip the the DL Button 2 to "ON". This is "OFF" by default
     DL Button 2 controls if the "End position message" should be triggered when the gate is closed
     Just connect the SW to the 0V terminal.
 
     <img src="images/ha_shelly_hoermann_3.jpg" width="50%" height="50%">
-    
-* Control the door
+
+- Control the door
 
     I did not connect the O/I ports to control the gate with my shelly. If you also want to control the gate just connect the O/I ports of your shelly to the two terminal ports on the right (open in my picture). The order does not matter
 
 #### **Homeassistant integration**
 
-
 If you now connect your shelly to HA you will receive the status and can control your gate. There is only one issue. The information is somewhat misleading in HA since it will show "ON" for closed and "OFF" for open.
 To fix that you can open up the Shelly App and change the setting "Reverse Input"
 
-To get the right status ```OPEN / CLOSE``` you will need to convert the binary sensor of the shelly to something more meaningfull. As always there is more then one way to do this. 
+To get the right status ```OPEN / CLOSE``` you will need to convert the binary sensor of the shelly to something more meaningfull. As always there is more then one way to do this.
 
 ##### Option 1 Create a Custom Template
 
@@ -245,21 +239,21 @@ Check out the Device Class Documentation for more information [https://www.home-
 
 My office is setup with
 
-* Shelly 1 for the ceiling light
-* Lidl LED Strip around a framed picture
-* IKEA Light Bulb as a desk light
-* OSRAM Smart Plug+ to control a standing light
-* Aqara Motion sensor next to the door
+- Shelly 1 for the ceiling light
+- Lidl LED Strip around a framed picture
+- IKEA Light Bulb as a desk light
+- OSRAM Smart Plug+ to control a standing light
+- Aqara Motion sensor next to the door
 
 When I walk into the office the motion sensor (PIR) is triggered and turns on all lights in my office. I also make use of the [FLUX](https://www.home-assistant.io/integrations/flux/) addon to generate a more natural light during the day.
 
-The lights stay on as long I'm in my office. This is done via the access point that has a special WIFI just for my office. If my phone changes back to our normal WIFI when leaving the office all lights are turned off and the motion sensor returns to its default state. 
+The lights stay on as long I'm in my office. This is done via the access point that has a special WIFI just for my office. If my phone changes back to our normal WIFI when leaving the office all lights are turned off and the motion sensor returns to its default state.
 
-I also added a the Sonoff SNZB-01 to control some custom light scenes. 
+I also added a the Sonoff SNZB-01 to control some custom light scenes.
 
-* Single press  : cycle thru all scenes setup for my office. (Working, Hangout, Gaming, Reading) 
-* Double press  : toggle all lights on or off. 
-* Long press    : dim lights to 50% 
+- Single press  : cycle thru all scenes setup for my office. (Working, Hangout, Gaming, Reading)
+- Double press  : toggle all lights on or off.
+- Long press    : dim lights to 50%
 
 See more [details](#zigbee-buttons-with-deconz-and-homeassistant) on how to use ZigBee Buttons with deConz and Homeassistant
 
@@ -269,11 +263,11 @@ See more [details](#zigbee-buttons-with-deconz-and-homeassistant) on how to use 
 
 One great use case for automation is the alarm mode. The mode turns on by itself when the house is empty based on the device trackers. If any of the motion, door, window or vibration sensors is triggered with the mode activated
 
-* all lights in our house are turned on to full brightness
-* the outdoor lights turn on as well and start blinking rapidly to drawn attention
-* all cameras start recording
-* a notification is send to my phone
-* and to add a little bit of extra to it -> the smart speakers start playing a very unpleasant noice.
+- all lights in our house are turned on to full brightness
+- the outdoor lights turn on as well and start blinking rapidly to drawn attention
+- all cameras start recording
+- a notification is send to my phone
+- and to add a little bit of extra to it -> the smart speakers start playing a very unpleasant noice.
 
 #### **Presence Faker**
 
@@ -309,15 +303,15 @@ sensor:
 
 ### ZigBee Buttons with deConz and Homeassistant
 
-Adding lights or outlets to your installation is pretty easy, but what about button and switches? It is almost as easy but takes a couple of steps to get everything working as you wish. 
+Adding lights or outlets to your installation is pretty easy, but what about button and switches? It is almost as easy but takes a couple of steps to get everything working as you wish.
 
 1. Add your buttons and switches thru the phoscon app by clicking on ```switches``` and then on ```Add new switch```
 
 <img src="images/ha_button_switch.png" width="50%" height="50%">
 
-1. The pairing will start and you will need to set your switch into pairing mode. 
+1. The pairing will start and you will need to set your switch into pairing mode.
 
-2. After the pairing is done, go back into your HA view and look for the switch. It is important to note that a switch will not show any state change that you can use. 
+2. After the pairing is done, go back into your HA view and look for the switch. It is important to note that a switch will not show any state change that you can use.
 
 3. To still be able to use the switch you need to react to the event of the switch send to the event bus. To find the event go the the developer tools and listen to the ```deconz_event```. This should look something like this
 
@@ -343,28 +337,28 @@ Adding lights or outlets to your installation is pretty easy, but what about but
 As you can see the event shows up with ``` "event": 1004 ```. You will have to note down the numbers to move forward
 For the Sonoff SNZB-01 will give you the following events
 
-* 1002 -> Single Press
-* 1003 -> Long Press
-* 1004 -> double Press
+- 1002 -> Single Press
+- 1003 -> Long Press
+- 1004 -> double Press
 
-5. You can now create your automation based on those information. Since I use more than one button and wanted to manage all actions in one view, I'm using node-red for this. 
+5. You can now create your automation based on those information. Since I use more than one button and wanted to manage all actions in one view, I'm using node-red for this.
 
-Create a "events: all" node and under event type select the ```deconz_event```. 
+Create a "events: all" node and under event type select the ```deconz_event```.
 Next add a switch node to seperate the events by device id
-Now you can add another switch node after on each output to define the different button actions. 
+Now you can add another switch node after on each output to define the different button actions.
 
 <img src="images/ha_button_node_red.png" width="400" height="400">
-
-
 
 ## Smart Meter Energy Monitoring
 
 ### Volkszähler Setup
+
 First you need to have a way to collect the readings from you energy meter. You can follow this guide on how to connect your Energy Meter with Volkszähler
 
 [Smart Meter Setup](https://github.com/rangulvers/smart_meter_setup)
 
 ### Homeassistant integration
+
 If you have your Volkszähler integration up and running it is time to connect the instance to your homeassistant. For this we will setup the Volkszähler MQTT Homeassistant integration.
 
 Add the following lines to your vzlogger.conf
@@ -414,20 +408,20 @@ sensor:
 
 ````
 
-Your meter information should now showup in your Homeassistant 
+Your meter information should now showup in your Homeassistant
 
 ![image](https://user-images.githubusercontent.com/5235430/131532612-fb492e99-a9f2-4710-b953-f20105f40912.png)
 
 ![image](https://user-images.githubusercontent.com/5235430/131532655-6b0db4ab-4321-486a-af40-78660300f391.png)
 
-And thanks to the new energy function you can use those information to monitor you daily energy usage 
+And thanks to the new energy function you can use those information to monitor you daily energy usage
 
 ![image](https://user-images.githubusercontent.com/5235430/131532831-898098d3-fd5f-4dbe-bdcc-3e983cc6df0c.png)
-
 
 ## Usefull stuff
 
 **Resetting Unify AP**
+
 ````shell
 sudo syswrapper.sh restore-default
 
