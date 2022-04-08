@@ -402,6 +402,8 @@ I also wanted to include the waste collection schedule of our local ZAKB service
           - Papierbehaelter
    ```
    5. You can now use the sensor in your automations or just display them in the dashboard
+   ![image](https://user-images.githubusercontent.com/5235430/162405403-967de078-2a69-4103-b76e-e29a9d71636b.png)
+
 
 
 ## Smart Meter Energy Monitoring
