@@ -41,6 +41,8 @@ Collection of scripts, tools, hardware and other elements used for our home auto
       - [**Network Monitoring**](#network-monitoring)
       - [**Server Monitoring**](#server-monitoring)
     - [ZigBee Buttons with deConz and Homeassistant](#zigbee-buttons-with-deconz-and-homeassistant)
+      - [Add your buttons and switches](#add-your-buttons-and-switches)
+    - [ZAKB Garbage Collection](#zakb-garbage-collection)
   - [Smart Meter Energy Monitoring](#smart-meter-energy-monitoring)
     - [Volkszähler Setup](#volkszähler-setup)
     - [Homeassistant integration](#homeassistant-integration-1)
@@ -172,9 +174,9 @@ Since the shelly comes with the 24v-60v DC option active by default there is not
 
     The ProMatic3 offers a direct power supply thru the board itself. Just connect
 
-    L(-) -> 20
+    **L(-) -> 20**
 
-    N(+) -> 5
+    **N(+) -> 5**
 
     <img src="images/ha_shelly_hoermann_1.jpg" width="50%" height="50%">
 
@@ -303,9 +305,12 @@ sensor:
 
 ### ZigBee Buttons with deConz and Homeassistant
 
+
 Adding lights or outlets to your installation is pretty easy, but what about button and switches? It is almost as easy but takes a couple of steps to get everything working as you wish.
 
-1. Add your buttons and switches thru the phoscon app by clicking on ```switches``` and then on ```Add new switch```
+#### Add your buttons and switches
+
+thru the phoscon app by clicking on ```switches``` and then on ```Add new switch```
 
 <img src="images/ha_button_switch.png" width="50%" height="50%">
 
@@ -348,6 +353,56 @@ Next add a switch node to seperate the events by device id
 Now you can add another switch node after on each output to define the different button actions.
 
 <img src="images/ha_button_node_red.png" width="400" height="400">
+
+### ZAKB Garbage Collection
+
+I also wanted to include the waste collection schedule of our local ZAKB service into my HA in order to trigger some reminders. 
+
+   1. You will need to download the ICS information for your area / street by generating the file from [https://www.zakb.de/online-service/abfallkalender/](https://www.zakb.de/online-service/abfallkalender/)
+   2. Download the file and save it into your www folder. I have created a subfolder ```www/ics```
+   3. Next you need to enable the waste_collection_schedule plugin and enter the configruation to you ``configruation.yaml``
+
+   ```yaml
+    waste_collection_schedule:
+    sources:
+      - name: ics
+        args:
+          file: /config/www/ics/Abfuhrtermine.ics
+          version: 2
+   ```
+   4. create a sensor for the type of garbage you want to re-use in you application
+   ```yaml
+   sensor:
+      - platform: waste_collection_schedule
+        name: Bioabfallbehaelter_days_garbage
+        details_format: appointment_types
+        value_template: "{{ value.daysTo }}"
+        types:
+          - Bioabfallbehaelter
+
+      - platform: waste_collection_schedule
+        name: Restabfallbehaelter_days_garbage
+        details_format: appointment_types
+        value_template: "{{ value.daysTo }}"
+        types:
+          - Restabfallbehaelter
+
+      - platform: waste_collection_schedule
+        name: GelberSack_days_garbage
+        details_format: appointment_types
+        value_template: "{{ value.daysTo }}"
+        types:
+          - Gelber Sack
+
+      - platform: waste_collection_schedule
+        name: Papierbehaelter_days_garbage
+        details_format: appointment_types
+        value_template: "{{ value.daysTo }}"
+        types:
+          - Papierbehaelter
+   ```
+   5. You can now use the sensor in your automations or just display them in the dashboard
+
 
 ## Smart Meter Energy Monitoring
 
