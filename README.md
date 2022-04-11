@@ -59,7 +59,12 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 
 ```mermaid
     flowchart LR
-        id1(Home Assistant)
+        subgraph RaspberryPI
+        id1(Home Assistant) ---> id2(ConBeeII)
+        end
+        subgraph ZigBee
+        id2 -...- id3(ZigBee Clients)
+        end
 ```
 
 ### Addons
