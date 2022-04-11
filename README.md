@@ -58,34 +58,35 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 ### Network
 
 ```mermaid
-    flowchart LR
-        subgraph RaspberryPI
-        ha1(Home Assistant) ---> ha2(ConBeeII)
-        net1 ---> ha1
-        end
-        subgraph ZigBee
-        ha2 -...- zb1c(ZigBee Clients)
-        end
+    flowchart TB
         subgraph Network
-        fib1(Fiber) ---> net1
+            fib1(Fiber) ---> net1
         end
         subgraph AP
-        net1(Switch) ---> net2(Access Point)
-        net1(Switch) ---> net3(Access Point)
-        net1(Switch) ---> net4(Access Point)
-        end
-        subgraph Cameras
-        net1(Switch) ---> cam1(Cameras)
+            net1(Switch) ---> net2(Access Point)
+            net1(Switch) ---> net3(Access Point)
+            net1(Switch) ---> net4(Access Point)
         end
         subgraph WiFi
-        net2 -...- wifi1(Clients)
-        net3 -...- wifi1(Clients)
-        net4 -...- wifi1(Clients)
+            net2 -...- wifi1(Clients)
+            net3 -...- wifi1(Clients)
+            net4 -...- wifi1(Clients)
+        end
+        subgraph Cameras
+            net1(Switch) ---> cam1(Cameras) 
         end
         subgraph Storage
-        net1 ---> stor1(QNAP)
-        cam1 ---> stor1
+            net1 ---> stor1(QNAP)
+            cam1 ---> stor1
         end
+        subgraph RaspberryPI
+            ha1(Home Assistant) ---> ha2(ConBeeII)
+            net1 ---> ha1
+        end
+        subgraph ZigBee
+            ha2 -...- zb1c(ZigBee Clients)
+        end
+
 ```
 
 ### Addons
