@@ -60,7 +60,7 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 ```mermaid
     flowchart TB
         subgraph Network
-            rout1{Router} ---> net1
+            rout1(Router) ---> net1
         end
         subgraph AP
             net1(Switch) ---> net2(Access Point)
@@ -73,7 +73,7 @@ Collection of scripts, tools, hardware and other elements used for our home auto
             net4 -...- wifi1(Clients)
         end
         subgraph Cameras
-            net1(Switch) ---> cam1(Cameras) 
+            net1{Switch} ---> cam1(Cameras) 
         end
         subgraph Storage
             net1 ---> stor1(QNAP)
