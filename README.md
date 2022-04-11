@@ -72,7 +72,7 @@ Collection of scripts, tools, hardware and other elements used for our home auto
         net1(Switch) ---> cam1(Cameras)
         end
         subgraph Cameras
-        cam1
+        net1(Switch) ---> cam1(Cameras)
         end
         subgraph WiFi
         net2 -...- wifi1(Clients)
