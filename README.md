@@ -61,11 +61,15 @@ Collection of scripts, tools, hardware and other elements used for our home auto
     flowchart LR
         subgraph RaspberryPI
         ha1(Home Assistant) ---> ha2(ConBeeII)
+        net1 ---> ha1
         end
         subgraph ZigBee
         ha2 -...- zb1c(ZigBee Clients)
         end
         subgraph Network
+        fib1(Fiber) ---> net1
+        end
+        subgraph AP
         net1(Switch) ---> net2(Access Point)
         net1(Switch) ---> net3(Access Point)
         net1(Switch) ---> net4(Access Point)
