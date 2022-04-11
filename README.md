@@ -78,6 +78,10 @@ Collection of scripts, tools, hardware and other elements used for our home auto
         net3 -...- wifi1(Clients)
         net4 -...- wifi1(Clients)
         end
+        subgraph Storage
+        net1 ---> stor1(QNAP)
+        cam1 ---> stor1
+        end
 ```
 
 ### Addons
