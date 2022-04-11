@@ -60,7 +60,7 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 ```mermaid
     flowchart TB
         subgraph Network
-            rout1(Router) ---> net1
+            rout1{Router} ---> net1
         end
         subgraph AP
             net1(Switch) ---> net2(Access Point)
