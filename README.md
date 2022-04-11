@@ -69,7 +69,6 @@ Collection of scripts, tools, hardware and other elements used for our home auto
         net1(Switch) ---> net2(Access Point)
         net1(Switch) ---> net3(Access Point)
         net1(Switch) ---> net4(Access Point)
-        net1(Switch) ---> cam1(Cameras)
         end
         subgraph Cameras
         net1(Switch) ---> cam1(Cameras)
