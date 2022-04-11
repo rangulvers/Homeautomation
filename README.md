@@ -69,6 +69,10 @@ Collection of scripts, tools, hardware and other elements used for our home auto
         net1(Switch) ---> net2(Access Point)
         net1(Switch) ---> net3(Access Point)
         net1(Switch) ---> net4(Access Point)
+        net1(Switch) ---> cam1(Cameras)
+        end
+        subgraph Cameras
+        cam1
         end
         subgraph WiFi
         net2 -...- wifi1(Clients)
