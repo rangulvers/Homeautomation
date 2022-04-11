@@ -55,6 +55,13 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 
 [home assistant](https://www.home-assistant.io/)
 
+### Network
+
+```mermaid
+    flowchart LR
+        id1(Home Assistant)
+```
+
 ### Addons
 
 | Addon            | used for                                                         | more information |
