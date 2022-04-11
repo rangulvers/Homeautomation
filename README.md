@@ -60,7 +60,7 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 ```mermaid
     flowchart TB
         subgraph Network
-            fib1(Fiber) ---> net1
+            rout1(Router) ---> net1
         end
         subgraph AP
             net1(Switch) ---> net2(Access Point)
@@ -77,7 +77,7 @@ Collection of scripts, tools, hardware and other elements used for our home auto
         end
         subgraph Storage
             net1 ---> stor1(QNAP)
-            cam1 ---> stor1
+            cam1 -...-> stor1
         end
         subgraph RaspberryPI
             ha1(Home Assistant) ---> ha2(ConBeeII)
