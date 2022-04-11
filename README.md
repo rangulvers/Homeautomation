@@ -60,10 +60,20 @@ Collection of scripts, tools, hardware and other elements used for our home auto
 ```mermaid
     flowchart LR
         subgraph RaspberryPI
-        id1(Home Assistant) ---> id2(ConBeeII)
+        ha1(Home Assistant) ---> ha2(ConBeeII)
         end
         subgraph ZigBee
-        id2 -...- id3(ZigBee Clients)
+        ha2 -...- zb1c(ZigBee Clients)
+        end
+        subgraph Network
+        net1(Switch) ---> net2(Access Point)
+        net1(Switch) ---> net3(Access Point)
+        net1(Switch) ---> net4(Access Point)
+        end
+        subgraph WiFi
+        net2 -...- wifi1(Clients)
+        net3 -...- wifi1(Clients)
+        net4 -...- wifi1(Clients)
         end
 ```
 
