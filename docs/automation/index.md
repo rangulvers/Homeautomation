@@ -1,5 +1,5 @@
 ---
-Title: Automation
+title: Automation
 ---
 
 ### Office Morning routine

@@ -1,5 +1,5 @@
 ---
-title: Used Addons
+title: Addons
 ---
 
 | Addon            | used for                                                         | more information |

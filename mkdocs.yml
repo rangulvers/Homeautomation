@@ -6,7 +6,6 @@ theme:
   language: en
   icon: 
     repo: fontawesome/brands/github
-  favicon: assets/images/favicon/dont_panic_black.ico
   # logo: dont_panic_black.jpg
   name: material
   palette:
@@ -26,7 +25,8 @@ theme:
     - navigation.indexes  
 plugins:
   - search
-  - tags
+  - tags:
+      tags_file: tags.md
   #- tags:
       #tags_file: Radar/radar.md
 markdown_extensions:
