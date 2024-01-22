@@ -9,7 +9,6 @@ theme:
   favicon: assets/images/favicon/dont_panic_black.ico
   # logo: dont_panic_black.jpg
   name: material
-  custom_dir: overrides
   palette:
     - scheme: default
       primary: white
@@ -48,8 +47,5 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.tasklist:
       custom_checkbox: true
