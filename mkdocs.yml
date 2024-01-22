@@ -1,0 +1,55 @@
+site_name: "Homeautomation Docs"
+repo_url: https://github.com/rangulvers/Homeautomation
+repo_name: rangulvers/Homeautomation
+edit_uri: edit/main/docs/
+theme:
+  language: en
+  icon: 
+    repo: fontawesome/brands/github
+  favicon: assets/images/favicon/dont_panic_black.ico
+  # logo: dont_panic_black.jpg
+  name: material
+  custom_dir: overrides
+  palette:
+    - scheme: default
+      primary: white
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - scheme: slate
+      primary: black
+      accent: light-blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+  features:
+    - navigation.indexes  
+plugins:
+  - search
+  - tags
+  #- tags:
+      #tags_file: Radar/radar.md
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - tables
+  - md_in_html
+  - def_list
+  - meta
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
